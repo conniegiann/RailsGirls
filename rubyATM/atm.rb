@@ -1,36 +1,38 @@
 def withdraw(amount)
+ 
+ # note val
+  note_value = 5
+
   if amount <= 0 # this deals with some of the situations...
     return false
   end
-  # ToDo: figure out this bit
-  # If the amount is divided by 5 and the remainder is 0, return true.
-  if amount % 5 == 0
-    return true
-  else
-    # otherwise return false.
+
+  if amount % note_value != 0 
     return false
   end
-end
 
+  amount / note_value
+
+end
 
 
 # import required testing libraries
 require 'minitest/spec'
 require 'minitest/autorun'
 
-# BELOW ARE THE TESTS FOR AUTOMATICALLY CHECKING YOUR SOLUTION.
-# THESE TESTS ARE FOR STEP 1.
-# THESE NEED TO BE REPLACED AFTER EACH STEP.
+
+# THESE TESTS ARE FOR STEP 2.
+
 describe 'atm' do
   [
     [-1, false],
     [0, false],
     [1, false],
     [43, false],
-    [17, false],
-    [5, true],
-    [20, true],
-    [35, true],
+    [7, false],
+    [5, 1],
+    [20, 4],
+    [35, 7],
   ].each do |input, expected|
     it "should return #{expected} when $#{input} is withdrawn" do
       withdraw(input).must_equal expected
