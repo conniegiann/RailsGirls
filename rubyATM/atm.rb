@@ -1,7 +1,7 @@
 def withdraw(amount)
  
  # note val
-  note_value = 5
+  note_value = 10
 
   if amount <= 0 # this deals with some of the situations...
     return false
@@ -45,17 +45,17 @@ require 'minitest/spec'
 require 'minitest/autorun'
 
 
-# THESE TESTS ARE FOR STEP 3.
+# THESE TESTS ARE FOR STEP 4.
 
 
 describe 'atm' do
   [
     [-1, false],
     [0, false],
-    [1, false],
-    [43, false],
-    [20, [5, 5, 5, 5]],
-    [35, [5, 5, 5, 5, 5, 5, 5]],
+    [7, false],
+    [45, false],
+    [20, [10, 10]],
+    [40, [10, 10, 10, 10]],
   ].each do |input, expected|
     it "should return #{expected} when $#{input} is withdrawn" do
       withdraw(input).must_equal expected
