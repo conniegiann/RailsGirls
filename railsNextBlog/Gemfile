@@ -23,3 +23,9 @@ gem 'foundation-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+
+
+
+group :test do
+  gem 'capybara'
+end
